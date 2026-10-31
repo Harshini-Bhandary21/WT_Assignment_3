@@ -1,0 +1,34 @@
+:root { --primary: #4338ca; --err: #dc2626; --ok: #16a34a; --bg: #f1f5f9; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: #1e293b; }
+.container { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+header h1 { margin-bottom: .2rem; color: var(--primary); }
+header p { margin-top: 0; color: #475569; }
+
+.layout { display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 768px) { .layout { grid-template-columns: 2fr 1fr; } }
+
+form, .summary, .enrolled { background: #fff; padding: 1.25rem; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.1); }
+.enrolled { margin-top: 1.25rem; }
+.field { margin-bottom: 1rem; }
+label, .label { display: block; font-weight: 600; margin-bottom: .25rem; }
+input[type=text], input[type=email], input[type=tel], input[type=number], input[type=date],
+input[type=password], select { width: 100%; padding: .55rem .7rem; border: 2px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+input:focus, select:focus { outline: none; border-color: var(--primary); }
+input.invalid, select.invalid { border-color: var(--err); background: #fef2f2; }
+input.valid, select.valid { border-color: var(--ok); }
+.error { color: var(--err); font-size: .85rem; margin: .25rem 0 0; }
+.hint { font-size: .85rem; color: #64748b; margin-top: .5rem; }
+.radios { display: flex; gap: 1.2rem; }
+.radio { font-weight: 400; display: flex; align-items: center; gap: .4rem; cursor: pointer; }
+
+button { width: 100%; padding: .75rem; font-size: 1rem; font-weight: 600; color: #fff; background: var(--primary);
+  border: none; border-radius: 6px; cursor: pointer; }
+button:hover:not(:disabled) { background: #3730a3; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+
+.summary h3 { margin-top: 0; }
+.summary .total { font-weight: 700; color: var(--primary); font-size: 1.15rem; }
+.success { background: #dcfce7; color: #166534; border: 1px solid #86efac; padding: .8rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+.enrolled ul { padding-left: 1.1rem; }
+.enrolled li { margin-bottom: .5rem; }
